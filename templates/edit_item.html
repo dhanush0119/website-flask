@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='edit_item.css') }}">
+    <title>Edit Item</title>
+</head>
+<body style="background-image: url('{{ url_for('static', filename='1.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;">
+    <div class="center-container">
+        <h2>Edit Item</h2>
+        
+        {% with messages=get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-message">
+                {% for category, message in messages %}
+                    {{message}}
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+            <label for="item_name">Item Name:</label>
+            <input type="text" name="item_name" value="{{ item_name }}" required>
+
+            <label for="item_qty">Quantity:</label>
+            <input type="number" name="item_qty" value="{{ item_qty }}" required>
+
+            <button type="submit" style="width: 50%;">Update Item</button>
+            <button style="width: 50%;"><a href="/">Back to Home</a></button>
+        </form>
+    </div>
+
+</body>
+
+</html>

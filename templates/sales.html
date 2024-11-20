@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.1">
+    <title>Sales</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='sales.css') }}">
+    
+</head>
+<body style="background-image: url('{{ url_for('static', filename='3.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;">
+    <h1 class="top-bar">Sale Items 🏷️</h1>
+    
+    <center>
+        <div class="cash-balance-button">
+            <button>Cash Balance: ₹{{ company.cash_bal}}</button>
+        </div>
+        <br><br>
+        
+        {% with messages=get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                    {% for category, message in messages %}
+                        <li style="color: red;">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <form action="/sales" method="post">
+            <label for="item_id">Select Item:</label>
+            <select name="item_id" required>
+                <option value="" selected disabled>None</option>
+                {% for i in items %}
+                    <option value="{{ i.item_id }}">{{ i.item_name }} ({{i.item_qty}})</option>
+                {% endfor %}
+            </select><br><br>
+            <label>Enter Quantity:</label>
+            <input type="number" name="qty" min="1" required><br><br>
+            <label>Enter Rate:</label>
+            <input type="number" step="0.01" name="rate" required><br><br>
+            <button type="submit">Sell Items</button>
+            <button><a href="/" style="text-decoration: none;">Back to Home</a></button>
+        </form>
+        
+    </center>
+</body>
+</html>

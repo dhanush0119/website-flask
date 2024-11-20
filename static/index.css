@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.top-bar {
+    background-color: rgb(2, 7, 2);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #ddd;
+}
+
+.nav-buttons {
+    display: flex; /* Use flexbox to align buttons */
+    justify-content: center; /* Center the buttons */
+    margin: 20px 0;
+    
+}
+
+.nav-buttons button {
+    flex: 1; /* Make buttons take equal width */
+    margin: 0 10px; /* Margin between buttons */
+    padding: 10px; /* Increased padding for better button size */
+    border: none;
+    background-color: #101111; /* Dark background color */
+    color: white; /* White text color */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    min-width: 100px; /* Reduced minimum width for buttons */
+    max-width: 200px; /* Optional: set a maximum width */
+    width: auto; /* Allow buttons to adjust to content */
+}
+
+.nav-buttons button a {
+    color: white; /* White text color for links */
+    text-decoration: none; /* Remove underline */
+    display: block; /* Make the link cover the entire button */
+    height: 100%; /* Ensures the link takes full height of the button */
+}
+
+.nav-buttons button:hover {
+    background-color: #0056b3; /* Change background color on hover */
+}
+
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow for the table */
+    background-color: #f9f9f9; /* Background color for the whole table */
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #070606; /* Background color for header */
+    color: rgb(234, 230, 225); /* Text color for header */
+    padding: 15px;
+    text-align: center;
+}
+
+td {
+    padding: 15px;
+    text-align: center;
+    background-color: #ffffff; /* Default background color for cells */
+}
+
+/* Alternate row colors for a striped effect */
+tr:nth-child(even) td {
+    background-color: #f1f1f1; /* Lighter color for even rows */
+}
+
+tr:nth-child(odd) td {
+    background-color: #ffffff; /* White color for odd rows */
+}
+
+/* Optional: Add hover effect on rows */
+tr:hover td {
+    background-color: #e0e0e0; /* Color on hover */
+}
+
+.cash-balance-button {
+    margin-left: 2%;
+    display: inline-block;
+}
+
+.cash-balance-button button {
+    background-color: #101111; /* Dark background color */
+    color: #f9f9f9; /* Light text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: default; /* No pointer cursor since it's just display */
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cash-balance-button button:hover {
+    background-color: #333333; /* Optional: Slight color change on hover */
+}

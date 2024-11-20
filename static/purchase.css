@@ -1,0 +1,88 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flexbox to center content */
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    height: 100vh; /* Full height of the viewport */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+/* Top Bar Styles */
+.top-bar {
+    background-color: #000; /* Black background */
+    color: white; /* White text */
+    width: 100%; /* Full width */
+    text-align: center; /* Center the text */
+    padding: 10px 0; /* Top and bottom padding */
+    position: absolute; /* Position it at the top */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+}
+
+/* Form Styles */
+form {
+    background-color: white; /* White background for the form */
+    padding: 20px; /* Padding around the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center form content */
+    width: 30%;
+}
+
+/* Label and Input Styles */
+label {
+    display: block; /* Make labels block elements */
+    margin: 10px 0 5px; /* Spacing for labels */
+}
+
+input, select {
+    width: 80%; /* Full width of the container */
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 15px; /* Space between inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Button Styles */
+button {
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding for buttons */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin: 10px 5px; /* Margin between buttons */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+.cash-balance-button {
+    margin-left: 2%;
+    display: inline-block;
+}
+
+.cash-balance-button button {
+    background-color: #101111; /* Dark background color */
+    color: #f9f9f9; /* Light text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: default; /* No pointer cursor since it's just display */
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cash-balance-button button:hover {
+    background-color: #333333; /* Optional: Slight color change on hover */
+}

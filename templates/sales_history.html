@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales History</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='sale_history.css') }}">
+</head>
+<body style="background-image: url('{{ url_for('static', filename='1.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;"></body>
+    <h1 class="top-bar">Sales History 📊</h1>
+    <center>
+        <table>
+            <tr>
+                <th>S.No</th>
+                <th>Sale Time</th>
+                <th>Item Id</th>
+                <th>Quantity</th>
+                <th>Rate</th>
+                <th>Amount</th>
+            </tr>
+            {% for i in new_his %}
+            <tr>
+                <td>{{i.sale_id}}</td>
+                <td>{{i.sale_time}}</td>
+                <td>{{i.s_item_id}}</td>
+                <td>{{i.s_qty}}</td>
+                <td>{{i.s_rate}}₹</td>
+                <td>{{i.s_amount}}₹</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+    <div class="button-container">
+        <button><a href="/" style="text-decoration: none;">Back to Home</a></button>
+    </div>
+</body>
+</html>

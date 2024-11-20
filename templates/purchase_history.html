@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase History</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='purchase_history.css') }}">
+</head>
+<body style="background-image: url('{{ url_for('static', filename='1.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;">
+    <h1 class="top-bar">Purchase History 🛍️</h1>
+    
+    <center>
+        <table>
+            <tr>
+                <th>S.No</th>
+                <th>Purchase Time</th>
+                <th>Item Id</th>
+                <th>Quantity</th>
+                <th>Rate</th>
+                <th>Amount</th>
+            </tr>
+            {% for i in new_his %}
+            <tr>
+                <td>{{i.pur_id}}</td>
+                <td>{{i.pur_time}}</td>
+                <td>{{i.pitem_id}}</td>
+                <td>{{i.qty}}</td>
+                <td>{{i.rate}}₹</td>
+                <td>{{i.amount}}₹</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="button-container">
+            <button><a href="/" style="text-decoration: none; margin-bottom: 50px;">Back to Home</a></button>
+        </div>
+       
+    </center>
+    
+</body>
+</html>

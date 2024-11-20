@@ -1,0 +1,29 @@
+<html>
+    <title>Company</title>
+    <body>
+       <table border="1">
+        <tr>
+            <th>Company id</th>
+            <th>Company Name</th>
+            <th>Cash balance</th>
+        </tr>
+       
+        {% for i in company %}
+            <tr>
+                <td>
+                    {{i.cmpy_id}}
+                </td>
+                <td>
+                    {{i.cmpy_name}}
+                </td>
+                <td>
+                    {{i.cash_bal}}
+                </td>
+            </tr>
+        {% endfor %}
+       </table>
+       <button><a href="/" style="text-decoration: none;">Back to Home</a></button>
+
+       
+    </body>
+</html>
