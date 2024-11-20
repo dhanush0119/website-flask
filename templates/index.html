@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+    <title>Namma Kadai</title>
+</head>
+<body style="background-image: url('{{ url_for('static', filename='3.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;">
+    <div class="top-bar">
+        
+        <h2>🎊Welcome to Namma Kadai🎊</h2>
+        
+        <!-- <h2>🎉Welcome to Namma Kadai🎉</h2> -->
+
+    </div>
+    <div class="nav-buttons" style="margin-top: 2%;">
+        <button><a href="/purchase">Purchase 🛒</a></button> 
+        <button><a href="/sales">Sale 🏷️</a></button>  
+        <button><a href="/purchase_history">Purchase History 🛍️</a></button>
+        <button><a href="/sales_history">Sale History 📊</a></button>
+    </div >
+    <div class="cash-balance-button">
+        <button>Cash Balance: ₹{{ company.cash_bal if company else 'No Company Found' }} </button>
+    </div>
+    
+       
+    <center>
+        <div class="nav-buttons">
+            <button style="margin-left: 65%;"><a href="/add_items">Add Item ➕</a></button>
+        </div>
+        <table border="1">
+            <tr>
+                <th>Item ID</th>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Update</th>
+            </tr>
+            {% for i in items %}
+                <tr>
+                    <td>{{ i.item_id }}</td>
+                    <td>{{ i.item_name }}</td>
+                    <td>{{ i.item_qty }}</td>
+                    <td><a href="{{ url_for('edit_item', id=i.item_id) }}" style="text-decoration: none;">Edit</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+    <br><br>
+</body>
+</html>
